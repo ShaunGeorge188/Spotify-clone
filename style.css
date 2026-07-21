@@ -28,19 +28,16 @@ body{
     width: 20px;
     gap: 15px;
     list-style: none;
-    border:  2px solid red;
     display: flex;
     padding: 14px;
 }
 
 .home ul{
-    border: 2px solid blue;
     gap: 20px;
 } 
 
 
 .home{
-    border: 2px solid;
     /* padding: 9px; */
     margin: 3px;
     gap: 40px;
@@ -60,7 +57,6 @@ body{
     width: 130px;
     gap: 14px;
     list-style: none;
-    border:  2px solid red;
     display: flex;
     padding: 15px;
     align-items: center;
@@ -72,13 +68,92 @@ body{
     font-size: 10px;
     color: grey;
     gap: 13px;
-    border: 2px solid red;
     height: 20vh;
     position: absolute;
     bottom: 0;
+    align-items: end;
+    align-content: flex-end;
 }
 
 .footer a{
+    text-decoration: none;
     color: grey;
+    
 }
 
+.right{
+    margin: 15px 0;
+}
+
+.header{
+    display: flex;
+    justify-content:  space-between;
+    background-color: #201f1f;
+}
+
+.header > *{
+    padding: 20px;
+}
+
+.spotifyPlaylist{
+    padding: 16px;
+}
+
+.cardContainer{
+    margin: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.card{
+    width:  200px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #201f1f;
+    position: relative;
+}
+
+.card > *{
+    padding-top: 3px;
+}
+
+.card img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.card p{
+    
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.play{
+    position: absolute;
+    right: 32px;
+    bottom: 76px;
+    background-color: #1ed760;
+    border-radius: 50%;
+    width: 48px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 8px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .play{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.play svg{
+    fill: black;
+    stroke: black;
+    width: 20px;
+    height: 20px;
+}
