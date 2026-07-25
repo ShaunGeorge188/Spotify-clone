@@ -161,3 +161,38 @@ body{
     height: 20px;
 }
 
+button > *{
+    margin: 0 12px; /*top and bottom 0 and the left  and right 12px */
+}
+
+.signupbtn{
+    background-color:  #201f1f;
+    color: rgb(122, 120, 120);
+    font-weight: bold;
+    border: none;
+    outline:  none;
+    cursor: pointer;
+}
+
+.signupbtn:hover{
+    font-size: 1rem;
+    color:  white;
+}
+
+.loginbtn{
+    background-color: white;
+    border-radius: 40px;
+    color: black;
+    padding: 10px;
+    width: 70px;
+    cursor: pointer;
+}
+
+.loginbtn:hover{
+    background-color: white;
+    border-radius:  21px;
+    color: black;
+    font-weight: bold;
+    width: 80px;
+    cursor: pointer;
+}
