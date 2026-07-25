@@ -12,6 +12,7 @@ This is an active learning project. Features and structure are being added incre
 - Navigation section (Home, Search)
 - "Your Library" section
 - Footer with legal links (Legal, Safety & Privacy, Privacy Policy, Cookies, About Ads, Accessibility)
+- Playlist cards with hover play buttons
 
 ## Tech stack
 
