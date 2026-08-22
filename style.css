@@ -6,7 +6,7 @@
     margin: 0px;
     padding: 0px;
     font-family: "Roboto", sans-serif;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 body{
@@ -47,7 +47,7 @@ body{
 }
 
 .library{
-    min-height: 50vh;
+    min-height: 70vh;
     position: relative;
 }
 
@@ -67,7 +67,7 @@ body{
     font-size: 10px;
     color: grey;
     gap: 13px;
-    height: 20vh;
+    height: 15vh;
     position: absolute;
     bottom: 0;
     align-items: end;
@@ -172,6 +172,7 @@ button > *{
     border: none;
     outline:  none;
     cursor: pointer;
+    margin-right: 15px;
 }
 
 .signupbtn:hover{
@@ -200,13 +201,28 @@ button > *{
 .playbar{
     position:  absolute;
     bottom: 0;
-    background-color: rgb(181, 225, 181);
-    width: 100%;
-    padding: 12px;
+    background-color: rgb(43, 43, 43);
+    width: 92%;
+    padding: 11px;
 }
 
 .songbuttons{
     display: flex;
     justify-content: center;
     gap: 12px;
+}
+
+.songList {
+    max-height: 30vh;
+    overflow-y: auto;
+    padding-bottom: 20vh; /* reserve space so footer never overlaps */
+}
+
+.songList ul{
+    padding: 0 42px;
+}
+
+.songList ul li{
+    list-style-type: decimal;
+    font-weight: 200;
 }
