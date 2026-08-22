@@ -28,9 +28,12 @@ async function main() {
     console.log(songs);
 
     let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0]
-    for(const song of songs){
-        songUL.innerHTML = songUL.innerHTML +  `<li> ${song.replaceAll("%20", " ")} </li>`
-    }
+    songUL.innerHTML = songs
+        .map(song => {
+            let name = song.replaceAll("%20", " ").replace(".mp3", "");
+            return `<li title="${name}">${name}</li>`;
+        })
+        .join("");
 
     var audio = new Audio(songs[0]);
     //audio.play();
