@@ -204,6 +204,7 @@ button > *{
     background-color: rgb(43, 43, 43);
     width: 92%;
     padding: 11px;
+    border-radius: 50px;
 }
 
 .songbuttons{
@@ -219,13 +220,78 @@ button > *{
 }
 
 .songList ul{
-    padding: 0 42px;
+    list-style: none;
+    padding: 0 16px;
 }
 
 .songList ul li{
-    list-style-type: decimal;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    white-space: nonwrap;
+}
+
+.songList ul li:hover{
+    background-color: #2a2a2a;
+}
+
+.songThumb{
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    object-fit: cover;
+    border-radius: 4px;
+    background-color: #333;
+    padding: 8px;
+}
+
+.songText{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.songTitle{
+    font-size: 14px;
     font-weight: 400;
+    color: white;
     white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 220px; /* adjust to fit your sidebar width */
+}
+
+.songArtist{
+    font-size: 12px;
+    font-weight: 300;
+    color: #a0a0a0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.thumbWrapper{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.playOverlay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.thumbWrapper:hover .playOverlay{
+    opacity: 1;
 }
