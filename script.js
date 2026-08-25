@@ -4,8 +4,24 @@ let songs = [];
 let currentIndex = 0;
 let currentAudio = new Audio();
 
+function parseSongName(song) {
+    let name = song.replaceAll("%20", " ").replace(".mp3", "");
+    let parts = name.split("-");
+    return {
+        artist: parts[0],
+        title: parts.slice(1).join(" ").trim()
+    };
+}
+
+function formatTime(seconds){
+    if(isNaN(seconds)) return "00:00";
+    let mins = Math.floor(seconds / 60);
+    let secs = Math.floor(seconds % 60);
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
+}
+
 async function getSongs() {
-    let a = await fetch("http://127.0.0.1:3002/songs/");
+    let a = await fetch("http://127.0.0.1:3000/songs/");
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -28,13 +44,10 @@ function renderSongList() {
 
     songUL.innerHTML = songs
         .map((song, index) => {
-            let name = song.replaceAll("%20", " ").replace(".mp3", "");
-            let parts = name.split("-");
-            let artist = parts[0];
-            let title = parts.slice(1).join(" ").trim();
+            let {artist, title} = parseSongName(song);
 
             return `
-                <li title="${name}" data-index="${index}">
+                <li title="${artist} - ${title}" data-index="${index}">
                     <div class="thumbWrapper">
                         <img class="songThumb" src="music.svg" alt="">
                         <img class="playOverlay" src="play.svg" alt="play">
@@ -56,8 +69,17 @@ function playSongAtIndex(index) {
     currentAudio.pause();
     currentAudio = new Audio(`songs/${songs[index]}`);
     currentAudio.play();
+    let { artist, title } = parseSongName(songs[index]);
+    document.querySelector('.songinfo').innerHTML = `${title} <span style="color:#a0a0a0;">• ${artist}</span>`;
+    document.querySelector('.songtime').innerHTML = "00:00 / 00:00"
 
     currentAudio.addEventListener("ended", playNext);
+
+    currentAudio.addEventListener("timeupdate", () => {
+        let current = formatTime(currentAudio.currentTime);
+        let total = formatTime(currentAudio.duration);
+        document.querySelector('.songtime').innerHTML = `${current} / ${total}`;
+    })
 
     refreshIcons();
 }
@@ -91,7 +113,10 @@ function refreshIcons() {
     document.querySelectorAll(".songList ul li").forEach(row => {
         let index = parseInt(row.dataset.index);
         let icon = row.querySelector(".playOverlay");
+        let isThisRowPlaying = (index === currentIndex && isPlaying);
+
         icon.src = (index === currentIndex && isPlaying) ? "pause.svg" : "play.svg";
+        row.classList.toggle("playing", index === currentIndex);
     });
 }
 

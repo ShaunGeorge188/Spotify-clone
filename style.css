@@ -295,3 +295,25 @@ button > *{
 .thumbWrapper:hover .playOverlay{
     opacity: 1;
 }
+
+.songList ul li.playing .playOverlay{
+    opacity: 1;
+}
+
+.seekbar{
+    height: 3px;
+    width: 100%;
+    background-color: grey;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+
+}
+
+.circle{
+    height: 7px;
+    width: 7px;
+    background-color: white;
+    border-radius: 50%;
+    transition: left 0.5s ease;
+}
