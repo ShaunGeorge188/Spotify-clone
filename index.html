@@ -11,7 +11,14 @@
 
 <body>
     <div class="container flex bg-black">
-        <div class="left">
+        <div class="left" id="sidebar">
+            <button id="closeSidebarBtn" class="closeSidebarBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none"
+                    stroke="#ffffff" stroke-width="2" stroke-linecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
             <div class="home bg-grey rounded m-1 p-1">
                 <div class="logo m-1"><img src="spotify.svg" alt="logo-icon"></div>
                 <ul>
@@ -29,7 +36,7 @@
                 <div class="songList">
                     <ul>
                         <li>
-                            
+
                         </li>
                     </ul>
                 </div>
@@ -53,6 +60,14 @@
         <div class="right bg-grey rounded p-1">
             <div class="header">
                 <div class="nav">
+                    <button id="hamburgerBtn" class="hamburgerBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none"
+                            stroke="#ffffff" stroke-width="2" stroke-linecap="round">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff"
                         fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M15 6C15 6 9.00001 10.4189 9 12C8.99999 13.5812 15 18 15 18"></path>
@@ -82,7 +97,7 @@
                         </div>
                         <img src="album_img/img4.webp" alt="">
                         <!-- <h2>KALYANI (with Shreya Ghoshal)</h2> -->
-                        <p></p>
+                        <p>My Beautiful Dark Twisted Fantasy </p>
                     </div>
                     <div class="card">
                         <div class="play">
@@ -93,9 +108,9 @@
                                 </path>
                             </svg>
                         </div>
-                        <img src="album_img/img1.webp" alt="">
+                        <img src="album_img/img6.webp" alt="">
                         <!-- <h2>KALYANI (with Shreya Ghoshal)</h2> -->
-                        <p></p>
+                        <p>Starboy</p>
                     </div>
                     <div class="card">
                         <div class="play">
@@ -108,7 +123,7 @@
                         </div>
                         <img src="album_img/img3.webp" alt="">
                         <!-- <h2>KALYANI (with Shreya Ghoshal)</h2> -->
-                        <p></p>
+                        <p>Hurry Up Tomorrow</p>
                     </div>
                     <div class="card">
                         <div class="play">
@@ -121,13 +136,13 @@
                         </div>
                         <img src="album_img/img5.webp" alt="">
                         <!-- <h2>KALYANI (with Shreya Ghoshal)</h2> -->
-                        <p></p>
+                        <p>DONDA 2 </p>
                     </div>
 
                 </div>
-                
+
                 <div class="playbar">
-                   
+
                     <div class="songinfo">
 
                     </div>
@@ -137,12 +152,12 @@
                         <img id="nextBtn" src="nextsong.svg" alt="">
                     </div>
                     <div class="songtime">
-                        
+
                     </div>
 
-                     <div class="seekbar">
+                    <div class="seekbar">
                         <div class="circle">
-                            
+
                         </div>
                     </div>
                 </div>

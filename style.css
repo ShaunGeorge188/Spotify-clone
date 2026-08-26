@@ -1,5 +1,7 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 
 *{
@@ -128,14 +130,15 @@ body{
 
 .card p{
     
-    font-size: 13px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
 }
 
 .play{
     position: absolute;
     right: 20px;
-    bottom: 45px;
+    bottom: 30%;
     background-color: #1ed760;
     border-radius: 50%;
     width: 48px;
@@ -343,4 +346,58 @@ button > *{
 
 .seekbar:hover{
     height: 5px;
+}
+
+.hamburgerBtn{
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.closeSidebarBtn{
+    display: none;
+}
+
+@media (max-width: 833px) {
+    .left{
+        position: fixed;
+        left: -100%;
+        height: 100vh;
+        width: 70vw;
+        max-width: 300px;
+        background-color: black;
+        transition: left .3s ease;
+        z-index: 10;
+        overflow-y: auto;
+    } 
+
+    .left.open{
+        left: 0;
+    }
+
+    .right{
+        width: 100vw;
+    }
+
+    .playbar{
+        width: 98vw;
+    }
+
+    .hamburgerBtn{
+        display: block;
+    }
+
+    .closeSidebarBtn{
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        margin-top: 4px;
+        margin-bottom: 8px;
+        position: absolute;
+        right: 4px;
+    }
 }

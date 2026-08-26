@@ -13,8 +13,8 @@ function parseSongName(song) {
     };
 }
 
-function formatTime(seconds){
-    if(isNaN(seconds)) return "00:00";
+function formatTime(seconds) {
+    if (isNaN(seconds)) return "00:00";
     let mins = Math.floor(seconds / 60);
     let secs = Math.floor(seconds % 60);
     return `${mins}:${secs.toString().padStart(2, "0")}`;
@@ -44,7 +44,7 @@ function renderSongList() {
 
     songUL.innerHTML = songs
         .map((song, index) => {
-            let {artist, title} = parseSongName(song);
+            let { artist, title } = parseSongName(song);
 
             return `
                 <li title="${artist} - ${title}" data-index="${index}">
@@ -148,6 +148,14 @@ function setupEventListeners() {
         let percentage = clickX / rect.width;
 
         currentAudio.currentTime = percentage * currentAudio.duration;
+    });
+
+    document.getElementById("hamburgerBtn").addEventListener("click", () => {
+        document.getElementById("sidebar").classList.toggle("open");
+    });
+
+    document.getElementById("closeSidebarBtn").addEventListener("click", () => {
+        document.getElementById("sidebar").classList.remove("open");
     });
 }
 
