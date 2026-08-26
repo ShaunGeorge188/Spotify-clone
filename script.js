@@ -79,6 +79,8 @@ function playSongAtIndex(index) {
         let current = formatTime(currentAudio.currentTime);
         let total = formatTime(currentAudio.duration);
         document.querySelector('.songtime').innerHTML = `${current} / ${total}`;
+
+        document.querySelector(".circle").style.left = (currentAudio.currentTime / currentAudio.duration) * 100 + "%";
     })
 
     refreshIcons();
@@ -138,6 +140,15 @@ function setupEventListeners() {
     document.getElementById("playBtn").addEventListener("click", togglePlayPause);
     document.getElementById("nextBtn").addEventListener("click", playNext);
     document.getElementById("prevBtn").addEventListener("click", playPrevious);
+
+    document.querySelector(".seekbar").addEventListener("click", (e) => {
+        let seekbar = e.currentTarget;
+        let rect = seekbar.getBoundingClientRect();
+        let clickX = e.clientX - rect.left;
+        let percentage = clickX / rect.width;
+
+        currentAudio.currentTime = percentage * currentAudio.duration;
+    });
 }
 
 async function main() {
