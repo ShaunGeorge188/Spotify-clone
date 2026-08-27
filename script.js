@@ -1,6 +1,7 @@
 console.log("Let's write javascript");
 
 let songs = [];
+let albums = [];
 let currentIndex = 0;
 let currentAudio = new Audio();
 
@@ -37,6 +38,41 @@ async function getSongs() {
         }
     }
     return songList;
+}
+
+async function getAlbums() {
+    let res = await fetch("albums.json");
+    return await res.json();
+}
+
+function playAlbum(albumIndex) {
+    let album = albums[albumIndex];
+    if (!album || album.songs.length === 0) return;
+
+    songs = album.songs;
+    renderSongList();
+    playSongAtIndex(0);
+}
+
+function renderAlbums() {
+    let cardContainer = document.querySelector(".cardContainer");
+
+    cardContainer.innerHTML = albums
+        .map((album, index) => {
+            return `
+                <div class="card" data-album-index="${index}">
+                    <div class="play">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                            color="#ffffff" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round">
+                            <path d="M18.8906 12.846C18.5371 14.189 16.8667 15.138 13.5257 17.0361C10.296 18.8709 8.6812 19.7884 7.37983 19.4196C6.8418 19.2671 6.35159 18.9776 5.95624 18.5787C5 17.6139 5 15.7426 5 12C5 8.2574 5 6.3861 5.95624 5.42132C6.35159 5.02245 6.8418 4.73288 7.37983 4.58042C8.6812 4.21165 10.296 5.12907 13.5257 6.96393C16.8667 8.86197 18.5371 9.811 18.8906 11.154C19.0365 11.7084 19.0365 12.2916 18.8906 12.846Z"></path>
+                        </svg>
+                    </div>
+                    <img src="${album.cover}" alt="${album.name}">
+                    <p>${album.name}</p>
+                </div>
+            `;
+        })
+        .join("");
 }
 
 function renderSongList() {
@@ -157,13 +193,22 @@ function setupEventListeners() {
     document.getElementById("closeSidebarBtn").addEventListener("click", () => {
         document.getElementById("sidebar").classList.remove("open");
     });
+
+    document.querySelector(".cardContainer").addEventListener("click", (e) => {
+        let card = e.target.closest(".card");
+        if (!card) return;
+        let albumIndex = parseInt(card.dataset.albumIndex);
+        playAlbum(albumIndex);
+    });
 }
 
 async function main() {
     songs = await getSongs();
-    console.log(songs);
+    albums = await getAlbums();
+    console.log(songs, albums);
 
     renderSongList();
+    renderAlbums();
     setupEventListeners();
 }
 

@@ -1,0 +1,82 @@
+[
+    {
+        "name": "JACKBOYS 2",
+        "cover": "album_img/img2.webp",
+        "songs": [
+            "Emotional-doomer-beat.mp3",
+            "Funk-amp.mp3"
+        ]
+    },
+    {
+        "name": "Starboy",
+        "cover": "album_img/img6.webp",
+        "songs": [
+            "Action-rock-music.mp3",
+            "Cinematic-upbeat-rock.mp3"
+        ]
+    },
+    {
+        "name": "Hurry Up Tomorrow",
+        "cover": "album_img/img3.webp",
+        "songs": [
+            "Escape-your-love.mp3",
+            "Jonasblakewood-rock.mp3"
+        ]
+    },
+    {
+        "name": "DONDA 2",
+        "cover": "album_img/img5.webp",
+        "songs": [
+            "Jonasblakewood-uplifting.mp3",
+            "Emotional-doomer-beat.mp3"
+        ]
+    },
+    {
+        "name": "The Blueprint 3",
+        "cover": "album_img/img7.webp",
+        "songs": [
+            "Funk-amp.mp3",
+            "Action-rock-music.mp3"
+        ]
+    },
+    {
+        "name": "GNX",
+        "cover": "album_img/img8.webp",
+        "songs": [
+            "Cinematic-upbeat-rock.mp3",
+            "Escape-your-love.mp3"
+        ]
+    },
+    {
+        "name": "Making Memories",
+        "cover": "album_img/img1.webp",
+        "songs": [
+            "Jonasblakewood-rock.mp3",
+            "Jonasblakewood-uplifting.mp3"
+        ]
+    },
+    {
+        "name": "Black Panther The Album",
+        "cover": "album_img/img11.webp",
+        "songs": [
+            "Emotional-doomer-beat.mp3",
+            "Action-rock-music.mp3"
+        ]
+    },
+    {
+        "name": "To Pimp A Butterfly",
+        "cover": "album_img/img9.webp",
+        "songs": [
+            "Funk-amp.mp3",
+            "Cinematic-upbeat-rock.mp3"
+        ]
+    },
+    {
+        "name": "good kid, m.A.A.d city",
+        "cover": "album_img/img10.webp",
+        "songs": [
+            "Escape-your-love.mp3",
+            "Jonasblakewood-rock.mp3"
+        ]
+    }
+]
